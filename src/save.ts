@@ -6,6 +6,8 @@ import * as utils from "./utils/actionUtils";
 
 async function run(): Promise<void> {
     try {
+        utils.logWarning("This is a test.");
+
         if (utils.isGhes()) {
             utils.logWarning("Cache action is not supported on GHES");
             return;
