@@ -44207,6 +44207,7 @@ const utils = __importStar(__webpack_require__(443));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            utils.logWarning("This is a test.");
             if (utils.isGhes()) {
                 utils.logWarning("Cache action is not supported on GHES");
                 return;
