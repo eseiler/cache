@@ -6,7 +6,13 @@ import * as utils from "./utils/actionUtils";
 
 async function run(): Promise<void> {
     try {
-        utils.logWarning("This is a test.");
+        core.info("This is a test.");
+        if (process.env[Events.Key] == "push") {
+            utils.logWarning("This is a push event");
+        }
+        if (process.env[Events.Key] == "pull_request") {
+            utils.logWarning("This is a pull_request event");
+        }
 
         if (utils.isGhes()) {
             utils.logWarning("Cache action is not supported on GHES");
